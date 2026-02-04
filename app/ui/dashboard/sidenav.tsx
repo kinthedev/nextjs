@@ -1,6 +1,9 @@
+import Image from "next/image"
 import Link from "next/link"
+// import { usePathname } from "next/navigation"
 
 export default function SideNav() {
+	// const pathName = use
 	return (
 		<nav className="bg-white shadow-md border-r border-gray-200 h-screen fixed top-0 left-0 min-w-[250px] py-6 px-4 overflow-auto">
 			<a href="javascript:void(0)">
