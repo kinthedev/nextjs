@@ -5,7 +5,7 @@ import Link from "next/link"
 export default function NavLinks() {
 	return (
 		<>
-			{links.map((link) => {
+			{/* {links.map((link) => {
 				const LinkIcon = link.icon
 				return (
 					<Link
@@ -16,7 +16,7 @@ export default function NavLinks() {
 						<p className="hidden md:block">{link.name}</p>
 					</Link>
 				)
-			})}
+			})} */}
 		</>
 	)
 }
