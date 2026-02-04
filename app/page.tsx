@@ -5,7 +5,7 @@
 // import { inter, lusitana } from "./ui/fonts"
 // import Image from "next/image"
 
-export default function Home() {
+export function Home() {
 	// const status: string = "paid"
 	return (
 		<div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -35,5 +35,23 @@ export default function Home() {
 			
 			</main> */}
 		</div>
+	)
+}
+// File: app/page.tsx
+import { neon } from "@neondatabase/serverless"
+
+export default function Page() {
+	async function create() {
+		"use server"
+		// Connect to the Neon database
+		const sql = neon(`${process.env.DATABASE_URL}`)
+		const [post] = await sql`SELECT * FROM posts `
+	}
+
+	return (
+		<form action={create}>
+			<input type="text" placeholder="write a comment" name="comment" />
+			<button type="submit">Submit</button>
+		</form>
 	)
 }
