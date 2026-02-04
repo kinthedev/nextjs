@@ -38,14 +38,16 @@ export function Home() {
 	)
 }
 // File: app/page.tsx
+// File: app/page.tsx
 import { neon } from "@neondatabase/serverless"
 
 export default function Page() {
-	async function create() {
+	async function create(formData: FormData) {
 		"use server"
 		// Connect to the Neon database
 		const sql = neon(`${process.env.DATABASE_URL}`)
-		const [post] = await sql`SELECT * FROM posts `
+		// Insert the comment from the form into the Postgres database
+		await sql`select * from posts;`
 	}
 
 	return (
